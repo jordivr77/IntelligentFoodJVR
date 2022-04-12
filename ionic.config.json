@@ -1,0 +1,7 @@
+{
+  "name": "IntelligentFood",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
