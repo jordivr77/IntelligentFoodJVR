@@ -10,6 +10,30 @@ const routes: Routes = [
   {
     path: 'folder/:id',
     loadChildren: () => import('./folder/folder.module').then( m => m.FolderPageModule)
+  },
+  {
+    path: 'home',
+    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+  },
+  {
+    path: 'hoy',
+    loadChildren: () => import('./hoy/hoy.module').then( m => m.HoyPageModule)
+  },
+  {
+    path: 'calendario',
+    loadChildren: () => import('./calendario/calendario.module').then( m => m.CalendarioPageModule)
+  },
+  {
+    path: 'tus',
+    loadChildren: () => import('./tus/tus.module').then( m => m.TusPageModule)
+  },
+  {
+    path: 'tus-recetas',
+    loadChildren: () => import('./tus-recetas/tus-recetas.module').then( m => m.TusRecetasPageModule)
+  },
+  {
+    path: 'alimentos',
+    loadChildren: () => import('./alimentos/alimentos.module').then( m => m.AlimentosPageModule)
   }
 ];
 
