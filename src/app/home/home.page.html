@@ -1,9 +1,22 @@
-<ion-header>
+<ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>home</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Home</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <div>
+    <ion-avatar id="mi-imagen"><img src="../../assets/icon/logo.jpg" alt="Intelligent Food"></ion-avatar>
+  </div>
+  <section class="home" id="home">
+    <div class="content">
+        <h3>COMER <span>TE SIENTA</span> BIEN</h3>
+        <p>Conéctate con tu ser</p>
+        <p>Come fresco y saludable</p>
+        <a href="#home" class="btn">Calcula tus calorías</a>
+    </div>
+</section>
 </ion-content>

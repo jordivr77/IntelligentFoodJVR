@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400&display=swap');
+
+:root {
+    --negroPasion:#191A19; 
+    --verdeOscuro:#1E5128;
+    --verdeClaro:#4E9F3D;
+    --verdePastel:#D8E9A8;
+    --box-shadow:0 .5rem 1rem #4E9F3D;
+    --border:.2rem solid #191A19;
+    --outline: .1rem solid #191A19;
+    --outline-hover:.2rem solid #191A19;
+}
+
+* {
+    border: none;
+    box-sizing: border-box;
+    font-family: 'Fredoka', sans-serif;
+    margin: 0;
+    outline: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: all linear .3s;
+}
+
+section {
+    padding: 1.8rem 8.5%;
+}
+
+#mi-imagen {
+    width: 250px;
+    height: 250px;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.home {
+    align-items: center;
+    background: url(https://img.freepik.com/foto-gratis/accesorios-estilo-vida-saludable-sobre-fondo-blanco-vista-superior_185193-6005.jpg?w=1380) no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 8rem;
+    padding-top: 15rem;
+}
+
+.home .content {
+    text-align: center;
+    width: 57rem;
+}
+
+.home .content h3 {
+    color: black;
+    font-size: 2.8rem;
+}
+
+.home .content h3 span {
+    color: #3d7432;
+}
+
+.home .content p {
+    color: #3d7432;
+    font-size: 1.5rem;
+    line-height: 1.65rem;
+    padding: 0.65rem;
+}
