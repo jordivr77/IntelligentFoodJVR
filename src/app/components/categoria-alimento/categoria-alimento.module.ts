@@ -16,5 +16,7 @@ import { CategoriaAlimentoPage } from './categoria-alimento.page';
     CategoriaAlimentoPageRoutingModule
   ],
   declarations: [CategoriaAlimentoPage]
+
+  
 })
 export class CategoriaAlimentoPageModule {}
