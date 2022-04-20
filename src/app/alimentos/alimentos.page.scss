@@ -1,0 +1,32 @@
+ion-content{
+
+    --padding-start: 2rem;
+    --padding-end: 2rem;
+
+    .header {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 2rem;
+        margin-top: 4rem;
+        text-align: center;
+    }
+
+    h1 {
+        color: #4E9F3D;
+        font-size: 4rem;
+        font-weight: 595;
+        margin: 0;
+        text-align: center;
+    }
+
+}
+
+ion-searchbar {
+    border-radius: 1.2rem;
+    box-shadow: 0 .5rem 1rem #4E9F3D;
+    color: #4E9F3D;
+    margin-bottom: 2rem;
+    padding: 0;
+    overflow: hidden;
+}
