@@ -64,3 +64,9 @@ section {
     line-height: 1.65rem;
     padding: 0.65rem;
 }
+
+ion-footer-bar {
+    display: flex;
+    justify-content: space-around;
+    margin: 15px;
+}
