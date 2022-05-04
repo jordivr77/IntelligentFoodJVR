@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Categoria } from '../modelos/categoria.model';
+import { Categoria } from '../modelos/categoria.interface';
+import { AlimentoService } from '../servicios/alimento.service';
 
 @Component({
   selector: 'app-alimentos',
@@ -10,14 +11,29 @@ export class AlimentosPage implements OnInit {
 
   categorias: Categoria[] = [];
 
+  // Crear array vacío de alimentos
+  alimentos = [];
+
   foods: any = [];
   searchedFood: any;
 
-  constructor() { }
+  // En el ctor se llama al SERVICIO
+  constructor(private alimentoService: AlimentoService) { }
 
+  // Codificamos la carga de los datos 
+  // Función que se carga en primera instancia al cargarse una pág.
   ngOnInit() {
     this.getCategorias();
     this.searchedFood = this.foods;
+
+    this.alimentoService.obtenerAlimentos()
+    .subscribe(data => {
+      this.alimentos = data
+    })
+  }
+
+  agregarAlimento(){
+
   }
 
   getCategorias() {
