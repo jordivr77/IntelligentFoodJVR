@@ -8,6 +8,8 @@ import { AlimentosPageRoutingModule } from './alimentos-routing.module';
 
 import { AlimentosPage } from './alimentos.page';
 
+import { AlimentoService } from '../servicios/alimento.service';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -15,6 +17,9 @@ import { AlimentosPage } from './alimentos.page';
     IonicModule,
     AlimentosPageRoutingModule
   ],
-  declarations: [AlimentosPage]
+  declarations: [AlimentosPage],
+  providers : [
+    AlimentoService
+  ]
 })
 export class AlimentosPageModule {}
