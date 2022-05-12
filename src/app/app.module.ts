@@ -12,6 +12,7 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AlimentosPageModule } from './alimentos/alimentos.module';
 
+
 @NgModule({
   declarations: [AppComponent],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, AlimentosPageModule], 

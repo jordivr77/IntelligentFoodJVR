@@ -9,7 +9,7 @@ export class AlimentoService {
 
   url = 'http://localhost:8080/api/alimentos/'
 
-  constructor(private http: HttpClient) { }
+  constructor(public http: HttpClient) { }
 
   obtenerAlimentos(): Observable<any> {
     return this.http.get<any>(this.url)
