@@ -12,13 +12,13 @@ export class AlimentosPage implements OnInit {
   categorias: Categoria[] = [];
 
   // Crear array vacío de alimentos
-  alimentos = [];
+  alimentos: any = [];
 
   foods: any = [];
   searchedFood: any;
 
   // En el ctor se llama al SERVICIO
-  constructor(private alimentoService: AlimentoService) { }
+  constructor(public alimentoService: AlimentoService) { }
 
   // Codificamos la carga de los datos 
   // Función que se carga en primera instancia al cargarse una pág.

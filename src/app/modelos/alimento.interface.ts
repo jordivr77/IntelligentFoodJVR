@@ -1,8 +1,9 @@
 export interface Alimento
 {
-    id?: number,
-    nombre: string,
-    imagen: string,
+    id?: number
+    imagen: string
+    ingrediente: number
     kcalorias: number
-
+    nombre: string
+    
 }
