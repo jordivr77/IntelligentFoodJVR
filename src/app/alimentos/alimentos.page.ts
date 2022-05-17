@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Alimento } from '../modelos/alimento.interface';
 import { Categoria } from '../modelos/categoria.interface';
 import { AlimentoService } from '../servicios/alimento.service';
+import { CategoriaService } from '../servicios/categoria.service';
 
 @Component({
   selector: 'app-alimentos',
@@ -12,19 +14,25 @@ export class AlimentosPage implements OnInit {
   categorias: Categoria[] = [];
 
   // Crear array vacío de alimentos
-  alimentos: any = [];
+  alimentos: Alimento[] = [];
 
   foods: any = [];
   searchedFood: any;
 
   // En el ctor se llama al SERVICIO
-  constructor(public alimentoService: AlimentoService) { }
+  constructor(public alimentoService: AlimentoService, public categoriaService: CategoriaService) { }
 
   // Codificamos la carga de los datos 
   // Función que se carga en primera instancia al cargarse una pág.
   ngOnInit() {
-    this.getCategorias();
+    
     this.searchedFood = this.foods;
+
+    this.categoriaService.obtenerCategorias()
+    .subscribe(data => {
+      console.log(data);
+      this.categorias = data;
+    })
 
     this.alimentoService.obtenerAlimentos()
     .subscribe(data => {
@@ -37,35 +45,6 @@ export class AlimentosPage implements OnInit {
 
   }
 
-  getCategorias() {
-    this.categorias = [
-      {
-        id: 1,
-        label: 'Todas',
-        image: 'assets/icon/todas.jpg',
-        active: true,
-      },
-      {
-        id: 2,
-        label: 'Aceites/Grasas Vegetales',
-        image: 'assets/icon/aceites-vegetales-grasas-animales.jpg',
-        active: false,
-      },
-      {
-        id: 3,
-        label: 'Dulces',
-        image: 'assets/icon/todas.jpg',
-        active: false,
-      },
-      {
-        id: 4,
-        label: 'Cremas',
-        image: 'assets/icon/todas.jpg',
-        active: false,
-      },
-
-    ];
-  }
 
   searchFood(event: any) {
     const text = event.target.value;
