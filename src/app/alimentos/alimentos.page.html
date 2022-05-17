@@ -1,39 +1,52 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-buttons slot="start">
+    <ion-buttons slot="start" class="menu_btn">
+      <ion-back-button color="ligth" defaultHref="search-ref"></ion-back-button>
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title>Alimentos</ion-title>
+    <ion-icon name="notifications" slot="end"></ion-icon>
+    <ion-badge id = "notifications-badge-msg" color="danger">2</ion-badge>
+    <ion-icon name="cart" slot="end"></ion-icon>
+    <ion-badge id="notifications-badge" color="danger">2 </ion-badge>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
 
+  <header class="jumbotron my-4">
+    <h1 class="display-3">Categorías</h1>
+  </header>
+
+  <!-- Page Features -->
+  <div class="row text-center">
+
+    <div class="col-lg-3 col-md-6 mb-4" *ngFor="let categoria of categorias">
+      <div class="card h-100">
+        <ion-img class="card-img-top" [scr]="categoria.imagen"></ion-img>
+        <!-- Para que acceda al directorio imágenes -->
+        <div class="card-body">
+          <p class="card-text">{{ categoria.nombre }}</p>
+        </div>
+        <div class="card-footer">
+          <a  class="btn btn-success">Ver alimentos</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
   <ion-list>
     
-    <ion-item>
-      <ion-label>Mega Man X</ion-label>
-    </ion-item>
     <ion-item *ngFor="let alimento of alimentos">
-     <!-- <ion-avatar slot="start">
+      <ion-avatar slot="start">
         <ion-img [scr]="alimento.imagen"></ion-img> 
-      </ion-avatar> --> 
+      </ion-avatar> 
       <ion-label>{{ alimento.nombre }}</ion-label>
       <ion-label>{{ alimento.kcalorias }}</ion-label>
     </ion-item>
-    <ion-item>
-      <ion-label>The Legend of Zelda</ion-label>
-    </ion-item>
-    <ion-item>
-      <ion-label>Pac-Man</ion-label>
-    </ion-item>
-    <ion-item>
-      <ion-label>Super Mario World</ion-label>
-    </ion-item>
-    
-  </ion-list>
 
-  
+  </ion-list>
 
 </ion-content>
 

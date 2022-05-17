@@ -26,6 +26,32 @@ ion-content{
 
 }
 
+ion-header {
+    ion-icon {
+        font-size: 20px;
+        position: relative;
+        margin-right: 11px;
+    }
+
+    #notifications-badge-msg {
+        background-color: #4E9F3D;
+        color: aliceblue;
+        position: absolute;
+        right: 55px;
+        top: 5px;
+        z-index: 111;
+    }
+
+    #notifications-badge {
+        background-color: #4E9F3D;
+        color: aliceblue;
+        position: absolute;
+        right: 20px;
+        top: 5px;
+        z-index: 111;
+    }
+}
+
 ion-searchbar {
     border-radius: 1.2rem;
     box-shadow: 0 .5rem 1rem #4E9F3D;
