@@ -11,23 +11,35 @@ import { CategoriaService } from '../servicios/categoria.service';
 })
 export class AlimentosPage implements OnInit {
 
+  /**
+   * Crear array vacío de categorias
+   */
   categorias: Categoria[] = [];
 
-  // Crear array vacío de alimentos
+  /**
+   * Crear array vacío de alimentos
+   */
   alimentos: Alimento[] = [];
 
   foods: any = [];
   searchedFood: any;
 
-  // En el ctor se llama al SERVICIO
+  /**
+   * 
+   * @param alimentoService En el constructor se llama al servicio de alimentos y categorías
+   * @param categoriaService 
+   */
   constructor(public alimentoService: AlimentoService, public categoriaService: CategoriaService) { }
 
-  // Codificamos la carga de los datos 
-  // Función que se carga en primera instancia al cargarse una pág.
+  /**
+   * Codificamos la carga de los datos
+   * Función que se carga en primera instancia al cargarse una página
+   */
   ngOnInit() {
     
     this.searchedFood = this.foods;
 
+    
     this.categoriaService.obtenerCategorias()
     .subscribe(data => {
       console.log(data);
