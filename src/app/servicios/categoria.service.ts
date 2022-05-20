@@ -5,13 +5,13 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class AlimentoService {
+export class CategoriaService {
 
-  url = 'http://localhost:8080/api/alimentos/'
+  url = 'http://localhost:8080/api/categorias/'
 
   constructor(public http: HttpClient) { }
 
-  obtenerAlimentos(): Observable<any> {
+  obtenerCategorias(): Observable<any> {
     return this.http.get<any>(this.url)
   }
 }
