@@ -11,12 +11,24 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AlimentosPageModule } from './alimentos/alimentos.module';
+import { AlimentoService } from './servicios/alimento.service';
+import { CategoriaService } from './servicios/categoria.service';
 
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, AlimentosPageModule], 
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  imports: [
+    BrowserModule, 
+    IonicModule.forRoot(), 
+    AppRoutingModule, 
+    HttpClientModule, 
+    AlimentosPageModule
+  ], 
+  providers: [
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    AlimentoService,
+    CategoriaService
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
