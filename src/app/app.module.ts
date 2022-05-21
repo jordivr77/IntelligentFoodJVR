@@ -13,6 +13,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AlimentosPageModule } from './alimentos/alimentos.module';
 import { AlimentoService } from './servicios/alimento.service';
 import { CategoriaService } from './servicios/categoria.service';
+import { AgregarAlimentoService } from './servicios/agregar-alimento.service';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { CategoriaService } from './servicios/categoria.service';
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     AlimentoService,
-    CategoriaService
+    CategoriaService,
+    AgregarAlimentoService
   ],
   bootstrap: [AppComponent],
 })
