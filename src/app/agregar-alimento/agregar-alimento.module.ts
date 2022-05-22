@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { AgregarAlimentoPageRoutingModule } from './agregar-alimento-routing.module';
 
 import { AgregarAlimentoPage } from './agregar-alimento.page';
+import { AgregarAlimentoService } from '../servicios/agregar-alimento.service';
 
 @NgModule({
   imports: [
@@ -15,6 +16,9 @@ import { AgregarAlimentoPage } from './agregar-alimento.page';
     IonicModule,
     AgregarAlimentoPageRoutingModule
   ],
-  declarations: [AgregarAlimentoPage]
+  declarations: [AgregarAlimentoPage],
+  providers: [
+    AgregarAlimentoService
+  ]
 })
 export class AgregarAlimentoPageModule {}
