@@ -10,7 +10,7 @@ const routes: Routes = [
   },
   {
     path: 'agregar-alimento',
-    loadChildren: () => import('./agregar-alimento/agregar-alimento.module').then( m => m.AgregarAlimentoPageModule)
+    loadChildren: () => import('../agregar-alimento/agregar-alimento.module').then( m => m.AgregarAlimentoPageModule)
   }
 ];
 

@@ -30,10 +30,6 @@ const routes: Routes = [
   {
     path: 'alimentos',
     loadChildren: () => import('./alimentos/alimentos.module').then( m => m.AlimentosPageModule)
-  },
-  {
-    path: 'categoria-alimento',
-    loadChildren: () => import('./components/categoria-alimento/categoria-alimento.module').then( m => m.CategoriaAlimentoPageModule)
   }
 ];
 
