@@ -10,16 +10,17 @@
     <h1 class="display-3">Alimentos</h1>
   </header>
 
-  <ion-list>
-    
-    <ion-item *ngFor="let alimento of alimentos">
+  <ion-item *ngFor="let alimento of alimentos" >
+    <!--<ion-list *ngIf="alimento.categoria.id == idCategoria">-->
       <ion-avatar slot="start">
-        <ion-img [scr]="alimento.imagen"></ion-img> 
-      </ion-avatar> 
+        <div>
+          <img srcset="../../assets/icon/{{ alimento.imagen }}" alt="{{ alimento.nombre}}">
+        </div>
+      </ion-avatar>
       <ion-label>{{ alimento.nombre }}</ion-label>
-      <ion-label>{{ alimento.kcalorias }}</ion-label>
-    </ion-item>
+      <ion-label>{{ alimento.kcalorias }} <span>Kcal</span></ion-label>
+    <!--</ion-list>-->
 
-  </ion-list>
+  </ion-item>
 
 </ion-content>
