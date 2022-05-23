@@ -10,7 +10,7 @@ export class AgregarAlimentoService {
   /**
    * Url base del microservicio de categorias desde Spring boot
    */
-  url = 'http://192.168.18.184:8080/api/alimentos/categorias/'
+  url = 'http://localhost:8080/api/alimentos/categorias/'
 
   /**
    * Constructor que inicializa el servicio
