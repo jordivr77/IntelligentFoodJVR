@@ -10,7 +10,7 @@ export class CategoriaService {
   /**
    * Url base del microservicio de categorias desde Spring Boot
    */
-  url = 'http://192.168.18.184:8080/api/categorias/'
+  url = 'http://localhost:8080/api/categorias/'
 
   /**
    * Constructor que inicializa el sevicio
