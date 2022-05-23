@@ -8,8 +8,11 @@
 </ion-header>
 
 <ion-content>
-  
-<ion-button color="success">Success</ion-button>
+
+  <header class="jumbotron my-4">
+    <h1 class="display-3">Bienvenido a tu día</h1>
+  </header>
+
   <div class="header">
     <h1>Hoy</h1>
   </div>
@@ -20,9 +23,9 @@
 
   <ion-content>
     <ion-item *ngFor="let consumicion of consumiciones">
-       <ion-label>{{ consumicion.alimento.nombre }}</ion-label>
-       <ion-label>{{ consumicion.alimento.kcalorias }}</ion-label>
-     </ion-item>
+      <ion-label>{{ consumicion.alimento.nombre }}</ion-label>
+      <ion-label>{{ consumicion.alimento.kcalorias }}</ion-label>
+    </ion-item>
   </ion-content>
 
   <!-- fab placed to the (vertical) bottom and end -->
