@@ -11,7 +11,7 @@ export class AlimentoService {
   /**
    * Url base del microservicio de alimentos de Spring boot
    */
-  url = 'http://192.168.18.184:8080/api/alimentos/'
+  url = 'http://localhost:8080/api/alimentos/'
 
   /**
    * 

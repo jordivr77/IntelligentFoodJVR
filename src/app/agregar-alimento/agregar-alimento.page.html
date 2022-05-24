@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" class="menu_btn">
+      <ion-back-button color="ligth" defaultHref="search-ref"></ion-back-button>
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Alimentos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <header class="jumbotron my-4">
+    <h1 class="display-3">Alimentos</h1>
+  </header>
+
+  <ion-item *ngFor="let alimento of alimentos" >
+    <!--<ion-list *ngIf="alimento.categoria.id == idCategoria">-->
+      <ion-avatar slot="start">
+        <div>
+          <img srcset="../../assets/icon/{{ alimento.imagen }}" alt="{{ alimento.nombre}}">
+        </div>
+      </ion-avatar>
+      <ion-label>{{ alimento.nombre }}</ion-label>
+      <ion-label>{{ alimento.kcalorias }} <span>Kcal</span></ion-label>
+    <!--</ion-list>-->
+
+  </ion-item>
+
+</ion-content>

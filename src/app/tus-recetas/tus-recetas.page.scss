@@ -1,4 +1,26 @@
+ion-content{
 
+    --padding-start: 2rem;
+    --padding-end: 2rem;
+
+    .header {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 2rem;
+        margin-top: 4rem;
+    }
+
+    h1 {
+        color: #4E9F3D;
+        font-size: 4rem;
+        font-weight: 595;
+        margin: 0;
+        text-align: center;
+        
+    }
+
+}
 
 ion-footer-bar {
     display: flex;

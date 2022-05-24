@@ -1,14 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-buttons slot="start" class="menu_btn">
-      <ion-back-button color="ligth" defaultHref="search-ref"></ion-back-button>
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
     <ion-title>Alimentos</ion-title>
-    <ion-icon name="notifications" slot="end"></ion-icon>
-    <ion-badge id = "notifications-badge-msg" color="danger">2</ion-badge>
-    <ion-icon name="cart" slot="end"></ion-icon>
-    <ion-badge id="notifications-badge" color="danger">2 </ion-badge>
   </ion-toolbar>
 </ion-header>
 
@@ -32,24 +24,12 @@
           <p class="card-text"> {{ categoria.nombre }} </p>
         </div>
         <div class="card-footer">
-          <a  class="btn btn-success">Ver alimentos</a>
+          <a  class="btn btn-success" [routerLink]="['/agregar-alimento', categoria.id]"> Ver Alimentos </a>
         </div>
       </div>
     </div>
 
   </div>
-
-  <ion-list>
-    
-    <ion-item *ngFor="let alimento of alimentos">
-      <ion-avatar slot="start">
-        <ion-img [scr]="alimento.imagen"></ion-img> 
-      </ion-avatar> 
-      <ion-label>{{ alimento.nombre }}</ion-label>
-      <ion-label>{{ alimento.kcalorias }}</ion-label>
-    </ion-item>
-
-  </ion-list>
 
 </ion-content>
 

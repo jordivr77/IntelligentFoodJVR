@@ -49,7 +49,7 @@ export class AlimentosPage implements OnInit {
     this.alimentoService.obtenerAlimentos()
     .subscribe(data => {
       console.log(data);
-      this.alimentos = data
+      this.alimentos = data;
     })
   }
 
