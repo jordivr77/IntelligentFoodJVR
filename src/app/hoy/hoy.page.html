@@ -15,15 +15,15 @@
   </div>
 
   <div class="header">
-    <h1 id="numCalorias">0</h1>
+    <h1 id="numCalorias">{{caloriasHoy}}</h1>
   </div>
 
-  <ion-content>
-    <ion-item *ngFor="let consumicion of consumiciones">
+  <!--<ion-content>
+    <ion-item *ngFor="let consumicion of hoy.consumiciones_dia">
        <ion-label>{{ consumicion.alimento.nombre }}</ion-label>
        <ion-label>{{ consumicion.alimento.kcalorias }}</ion-label>
      </ion-item>
-  </ion-content>
+  </ion-content>-->
 
   <!-- fab placed to the (vertical) bottom and end -->
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
