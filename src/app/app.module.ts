@@ -20,6 +20,7 @@ import { TusRecetasPageModule } from './tus-recetas/tus-recetas.module';
 import { AlimentoService } from './servicios/alimento.service';
 import { CategoriaService } from './servicios/categoria.service';
 import { AgregarAlimentoService } from './servicios/agregar-alimento.service';
+import { DiaService } from './servicios/dia.service';
 
 
 @NgModule({
@@ -41,7 +42,8 @@ import { AgregarAlimentoService } from './servicios/agregar-alimento.service';
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     AlimentoService,
     CategoriaService,
-    AgregarAlimentoService
+    AgregarAlimentoService,
+    DiaService
   ],
   bootstrap: [AppComponent],
 })

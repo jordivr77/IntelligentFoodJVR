@@ -32,9 +32,7 @@ export class HoyPage implements OnInit {
             this.hoy = data;
           });
         });
-        
       }
     });
   }
-
 }
