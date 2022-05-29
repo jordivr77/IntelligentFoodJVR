@@ -14,17 +14,50 @@
     <h1 class="display-3">Alimentos</h1>
   </header>
 
-  <ion-item *ngFor="let alimento of alimentos" >
-    <!--<ion-list *ngIf="alimento.categoria.id == idCategoria">-->
-      <ion-avatar slot="start">
+  <div class="row text-center">
+
+    <div class="col-lg-3 col-md-6 mb-4" *ngFor="let alimento of alimentos">
+      <div class="card h-100">
+        <!-- <ion-img class="card-img-top" [scr]="categoria.imagen"></ion-img> -->
         <div>
           <img srcset="../../assets/icon/{{ alimento.imagen }}" alt="{{ alimento.nombre}}">
         </div>
-      </ion-avatar>
-      <ion-label>{{ alimento.nombre }}</ion-label>
-      <ion-label>{{ alimento.kcalorias }} <span>Kcal</span></ion-label>
-    <!--</ion-list>-->
+        <!-- Para que acceda al directorio imágenes -->
+        <div class="card-body">
+          <p class="card-text"> {{ alimento.nombre }} </p>
+        </div>
+        <div class="card-footer">
+          <div>
+            <ion-label>
+              <strong>{{ alimento.kcalorias }} <span>Kcal</span></strong>
+            </ion-label>
+          </div>
+          <div class="input-group mb-3">
+            <input type="number" class="form-control" placeholder="Tus gramos" aria-label="Tus gramos" step="100" min="100">
+            <span class="input-group-text">Grs.</span>
+          </div>
+          <div>
+            <a  [routerLink]="['/hoy', alimento.id, alimento.kcalorias]" class="card-link">Comer</a>
+          </div>
+          <div>
+            <a href="#" class="card-link">Comer y seguir</a>
+          </div>
+        </div>
+      </div>
+    </div>
 
+  </div>
+
+  <ion-item *ngFor="let alimento of alimentos">
+    <!--<ion-list *ngIf="alimento.categoria.id == idCategoria">-->
+    <ion-avatar slot="start">
+      <div>
+        <img srcset="../../assets/icon/{{ alimento.imagen }}" alt="{{ alimento.nombre}}">
+      </div>
+    </ion-avatar>
+    <ion-label>{{ alimento.nombre }}</ion-label>
+    <ion-label>{{ alimento.kcalorias }} <span>Kcal</span></ion-label>
+    <!--</ion-list>-->
   </ion-item>
 
 </ion-content>
