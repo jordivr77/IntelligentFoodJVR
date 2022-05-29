@@ -43,7 +43,9 @@ export class HoyPage implements OnInit {
       }
     });
 
+  
     this.id = this.activatedRoute.snapshot.paramMap.get("id")
+
     this.kcalorias = this.activatedRoute.snapshot.paramMap.get("kcalorias")
     console.log("id", this.id);
     console.log("kcalorias", this.kcalorias);
