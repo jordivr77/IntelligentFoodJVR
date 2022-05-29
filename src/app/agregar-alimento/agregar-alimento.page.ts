@@ -23,10 +23,15 @@ export class AgregarAlimentoPage implements OnInit {
 
   idCategoria: any;
 
+  idAlimento: any;
+
   /**
    * En constructor se llama al servicio de agregar-alimento
    */
-  constructor(public agregarAlimentoService: AgregarAlimentoService, private activatedRoute: ActivatedRoute) { }
+  constructor(
+    public agregarAlimentoService: AgregarAlimentoService, 
+    private activatedRoute: ActivatedRoute
+    ) { }
 
   /**
    * Codificamos la carga de los datos
@@ -44,5 +49,10 @@ export class AgregarAlimentoPage implements OnInit {
       this.alimentos = data;
     })
   }
+
+  /**
+   * Método que aumenta la cantidad de gramos del alimento
+   */
+
 
 }
