@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Dia } from '../modelos/dia.interface';
 import { DiaService } from '../servicios/dia.service';
 
@@ -13,7 +14,10 @@ export class HoyPage implements OnInit {
 
   caloriasHoy: number = 0;
 
-  constructor(public diaService: DiaService) { }
+  constructor(
+    public diaService: DiaService,
+    private activatedRoute: ActivatedRoute
+  ) { }
 
   ngOnInit() {
     this.diaService.obtenerHoy(1).subscribe(data => {
@@ -30,13 +34,11 @@ export class HoyPage implements OnInit {
         }
       } else {
         this.diaService.crearNuevoDia(1).subscribe(data => {
-          this.diaService.obtenerHoy(1).subscribe(data =>{ 
+          this.diaService.obtenerHoy(1).subscribe(data => {
             this.hoy = data;
           });
         });
-        
       }
     });
   }
-
 }

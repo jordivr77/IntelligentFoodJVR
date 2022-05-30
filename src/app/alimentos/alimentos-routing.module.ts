@@ -9,8 +9,8 @@ const routes: Routes = [
     component: AlimentosPage
   },
   {
-    path: 'agregar-alimento',
-    loadChildren: () => import('./agregar-alimento/agregar-alimento.module').then( m => m.AgregarAlimentoPageModule)
+    path: 'agregar-alimento/:id',
+    loadChildren: () => import('../agregar-alimento/agregar-alimento.module').then( m => m.AgregarAlimentoPageModule)
   }
 ];
 
