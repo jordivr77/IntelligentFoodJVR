@@ -5,7 +5,7 @@ import { Receta } from "./receta.interface";
 /**
  * Entidad que mapea la información obtenida del microservicio consumiciónDia
  */
-export interface ConsumicionDia {
+export class ConsumicionDia {
     /**
      * Identificador de la consumicionDia
      */

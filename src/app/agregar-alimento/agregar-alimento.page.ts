@@ -3,6 +3,10 @@ import { ActivatedRoute } from '@angular/router';
 import { Alimento } from '../modelos/alimento.interface';
 import { Categoria } from '../modelos/categoria.interface';
 import { AgregarAlimentoService } from '../servicios/agregar-alimento.service';
+import { ConsumicionDiaService } from '../servicios/consumicion-dia.service';
+import { ConsumicionDia } from '../modelos/consumicionDia.interface';
+import { DiaService } from '../servicios/dia.service';
+import { Usuario } from '../modelos/usuario.interface';
 
 @Component({
   selector: 'app-agregar-alimento',
@@ -30,6 +34,8 @@ export class AgregarAlimentoPage implements OnInit {
    */
   constructor(
     public agregarAlimentoService: AgregarAlimentoService, 
+    public consumicionDiaService: ConsumicionDiaService,
+    public diaService: DiaService,
     private activatedRoute: ActivatedRoute
     ) { }
 
@@ -50,9 +56,16 @@ export class AgregarAlimentoPage implements OnInit {
     })
   }
 
-  /**
-   * Método que aumenta la cantidad de gramos del alimento
-   */
+  consumirAlimento(alimento: Alimento, gramos_aliento: number){
+    let consumiciondia = new ConsumicionDia();
+    consumiciondia.alimento = alimento;
+    consumiciondia.gramos_aliento = gramos_aliento;
+    this.diaService.obtenerHoy(1).subscribe(data => {
+      consumiciondia.dia = data;
+      this.consumicionDiaService.crearConsumicionDia(consumiciondia).subscribe();
+    });
+  }
+
 
 
 }

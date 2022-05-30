@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import { Dia } from '../modelos/dia.interface';
 import { DiaService } from '../servicios/dia.service';
 
@@ -14,13 +13,9 @@ export class HoyPage implements OnInit {
 
   caloriasHoy: number = 0;
 
-  id: any;
-  kcalorias: any;
-
 
   constructor(
-    public diaService: DiaService,
-    private activatedRoute: ActivatedRoute
+    public diaService: DiaService
   ) { }
 
   ngOnInit() {
@@ -42,12 +37,5 @@ export class HoyPage implements OnInit {
         });
       }
     });
-
-  
-    this.id = this.activatedRoute.snapshot.paramMap.get("id")
-
-    this.kcalorias = this.activatedRoute.snapshot.paramMap.get("kcalorias")
-    console.log("id", this.id);
-    console.log("kcalorias", this.kcalorias);
   }
 }

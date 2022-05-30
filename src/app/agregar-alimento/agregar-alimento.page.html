@@ -37,7 +37,7 @@
             <span class="input-group-text">Grs.</span>
           </div>
           <div>
-            <a  [routerLink]="['/hoy', alimento.id, alimento.kcalorias]" class="card-link">Comer</a>
+            <button (click)="consumirAlimento(alimento, 100)" class="card-link">Comer</button>
           </div>
           <div>
             <a href="#" class="card-link">Comer y seguir</a>

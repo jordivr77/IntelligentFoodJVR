@@ -4,7 +4,7 @@ import { Receta } from "./receta.interface";
 /**
  * Entidad que mapea la información del microservicio Usuario
  */
-export interface Usuario {
+export class Usuario {
     /**
      * Identificador del usuario
      */
