@@ -13,7 +13,6 @@ export class HoyPage implements OnInit {
 
   caloriasHoy: number = 0;
 
-
   constructor(
     public diaService: DiaService
   ) { }
@@ -25,7 +24,9 @@ export class HoyPage implements OnInit {
         if (this.hoy.consumiciones_dia) {
           this.hoy.consumiciones_dia.forEach(consumicion => {
             if (consumicion.alimento) {
-              this.caloriasHoy = this.caloriasHoy + (consumicion.alimento.kcalorias / 100) * consumicion.gramos_aliento;
+              this.caloriasHoy = this.caloriasHoy + (consumicion.alimento.kcalorias/100) * consumicion.gramos_aliento;
+            } else {
+              this.caloriasHoy = this.caloriasHoy + (consumicion.receta.kcalorias/100) * consumicion.gramos_receta;
             }
           });
         }

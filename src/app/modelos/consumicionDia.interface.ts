@@ -36,5 +36,5 @@ export class ConsumicionDia {
      */
     dia: Dia;
 
-
+    constructor() {};
 }

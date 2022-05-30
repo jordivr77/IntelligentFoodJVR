@@ -65,4 +65,6 @@ export class Usuario {
      */
     recetas: Receta[];
     
+    constructor() {};
+    
 }
