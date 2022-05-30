@@ -23,6 +23,8 @@ export class HoyPage implements OnInit {
           this.hoy.consumiciones_dia.forEach(consumicion => {
             if (consumicion.alimento) {
               this.caloriasHoy = this.caloriasHoy + (consumicion.alimento.kcalorias/100) * consumicion.gramos_aliento;
+            } else {
+              this.caloriasHoy = this.caloriasHoy + (consumicion.receta.kcalorias/100) * consumicion.gramos_receta;
             }
           });
         }

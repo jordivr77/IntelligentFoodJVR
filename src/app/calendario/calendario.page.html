@@ -8,7 +8,12 @@
 </ion-header>
 
 <ion-content>
-  
+  <ion-card *ngFor="let dia of dias">
+    <ion-card-header>
+      <ion-card-subtitle>{{dia.fecha}}</ion-card-subtitle>
+      <ion-card-title>Calorias consumidas: {{caloriasDia(dia)}}</ion-card-title>
+    </ion-card-header>
+  </ion-card>
 </ion-content>
 
 <ion-footer-bar class="bar-positive">

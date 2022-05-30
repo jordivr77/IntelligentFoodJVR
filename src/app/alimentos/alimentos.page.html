@@ -43,7 +43,7 @@
     
     <ion-item *ngFor="let alimento of alimentos">
       <ion-avatar slot="start">
-        <ion-img [scr]="alimento.imagen"></ion-img> 
+        <ion-img scr="alimento.imagen"></ion-img> 
       </ion-avatar> 
       <ion-label>{{ alimento.nombre }}</ion-label>
       <ion-label>{{ alimento.kcalorias }}</ion-label>
