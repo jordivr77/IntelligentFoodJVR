@@ -7,7 +7,11 @@ const routes: Routes = [
   {
     path: '',
     component: TusRecetasPage
+  },  {
+    path: 'nueva-receta',
+    loadChildren: () => import('./nueva-receta/nueva-receta.module').then( m => m.NuevaRecetaPageModule)
   }
+
 ];
 
 @NgModule({

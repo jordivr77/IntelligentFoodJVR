@@ -5,22 +5,22 @@
 import { Alimento } from "./alimento.interface"
 import { Receta } from "./receta.interface";
 
-export interface Categoria {
+export class Categoria {
 
     /**
      * Identidficador de la Categoría
      */
-    id: number,
+    id: number;
 
     /**
      * Nombre de la categoría
      */
-    nombre: string,
+    nombre: string;
 
     /**
      * imagen de la categoría
      */
-    imagen: string
+    imagen: string;
 
     /**
      * Loa alimentos que tiene una categoría
@@ -32,5 +32,6 @@ export interface Categoria {
      */
     recetas: Receta[];
 
+    constructor() {};
     
 }

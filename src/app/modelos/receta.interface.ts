@@ -5,7 +5,7 @@ import { Usuario } from "./usuario.interface";
 /**
  * Entida que mapea la información obtenida del microservicio Receta
  */
-export interface Receta {
+export class Receta {
     /**
      * Identificador de la receta
      */
@@ -35,5 +35,7 @@ export interface Receta {
      * ConsumicionDia que tiene una receta
      */
     consumiciones_dia: ConsumicionDia[];
+
+    constructor() {};
     
 }
