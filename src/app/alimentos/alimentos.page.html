@@ -24,14 +24,31 @@
           <p class="card-text"> {{ categoria.nombre }} </p>
         </div>
         <div class="card-footer">
-          <a  class="btn btn-success" [routerLink]="['/agregar-alimento', categoria.id]"> Ver Alimentos </a>
+          <a class="btn btn-success" [routerLink]="['/agregar-alimento', categoria.id]"> Ver Alimentos </a>
         </div>
       </div>
     </div>
 
+    <div class="col-lg-3 col-md-6 mb-4">
+      <div class="card h-100">
+        <!-- <ion-img class="card-img-top" [scr]="categoria.imagen"></ion-img> -->
+        <div>
+          <img srcset="../../assets/icon/Recetas.JPG" alt="Recetas">
+        </div>
+        <!-- Para que acceda al directorio imágenes -->
+        <div class="card-body">
+          <p class="card-text"> Recetas </p>
+        </div>
+        <div class="card-footer">
+          <a class="btn btn-success" [routerLink]="['/tus-recetas']"> Ver Recetas </a>
+        </div>
+      </div>
+    </div>
+
+
+
   </div>
 
+
+
 </ion-content>
-
-
-

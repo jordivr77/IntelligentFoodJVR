@@ -11,13 +11,37 @@
   <header class="jumbotron my-4">
     <h1 class="display-3">Tus Recetas</h1>
   </header>
+
+  <div class="row text-center">
+    <div class="col-lg-3 col-md-6 mb-4" *ngFor="let receta of recetas">
+      <div class="card h-100">
+        <!-- Para que acceda al directorio imágenes -->
+        <div class="card-body">
+          <p class="card-text"> {{ receta.nombre }} </p>
+        </div>
+        <div class="card-footer">
+          <div>
+            <ion-label>
+              <strong>{{ receta.kcalorias }} <span>Kcal</span></strong>
+            </ion-label>
+          </div>
+          <div class="input-group mb-3">
+            <input type="number" class="form-control" placeholder="Tus gramos" aria-label="Tus gramos" step="100" min="100">
+            
+            <!--<span class="input-group-text">Grs.</span>-->
+          </div>
+          <div>
+            <button class="card-link">Mira</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
 	<ion-fab vertical="bottom" horizontal="end" slot="fixed">
 		<ion-fab-button [routerLink]="['/nueva-receta']">
 		  <ion-icon name="add"></ion-icon>
 		</ion-fab-button>
 	  </ion-fab>
 </ion-content>
-
-<ion-footer-bar class="bar-positive">
-  <div class="title">Intelligent Food</div>
-</ion-footer-bar>
