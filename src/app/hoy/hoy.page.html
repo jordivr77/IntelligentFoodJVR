@@ -14,15 +14,24 @@
   </header>
 
   <div class="header">
-    <h1 id="numCalorias">{{caloriasHoy}}</h1>
+    <h1 id="numCalorias">{{caloriasHoy}} calorías</h1>
   </div>
 
-  <!--<ion-content>
-    <ion-item *ngFor="let consumicion of hoy.consumiciones_dia">
-       <ion-label>{{ consumicion.alimento.nombre }}</ion-label>
-       <ion-label>{{ consumicion.alimento.kcalorias }}</ion-label>
+  <div *ngIf="consumicionesHoy.length >0">
+    <ion-item>
+      <ion-label>Comida</ion-label>
+      <ion-label>Valor calórico</ion-label>
+      <ion-label>Cantidad</ion-label>
+    </ion-item>
+    <ion-item *ngFor="let consumicion of consumicionesHoy">
+       <ion-label *ngIf="consumicion.alimento != null">{{ consumicion.alimento.nombre }}</ion-label>
+       <ion-label *ngIf="consumicion.receta != null">{{ consumicion.receta.nombre }}</ion-label>
+       <ion-label *ngIf="consumicion.alimento != null">{{ consumicion.alimento.kcalorias }}Kcal</ion-label>
+       <ion-label *ngIf="consumicion.receta != null">{{ consumicion.receta.kcalorias }}Kcal</ion-label>
+       <ion-label *ngIf="consumicion.alimento != null">{{ consumicion.gramos_alimento }}g</ion-label>
+       <ion-label *ngIf="consumicion.receta != null">{{ consumicion.gramos_receta }}g</ion-label>
      </ion-item>
-  </ion-content>-->
+    </div>
 
   <!-- fab placed to the (vertical) bottom and end -->
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">

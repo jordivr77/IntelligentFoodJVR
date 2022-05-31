@@ -32,7 +32,7 @@ export class Dia {
         if (this.consumiciones_dia) {
             this.consumiciones_dia.forEach(consumicion => {
                 if (consumicion.alimento) {
-                    total = total + (consumicion.alimento.kcalorias/100) * consumicion.gramos_aliento;
+                    total = total + (consumicion.alimento.kcalorias/100) * consumicion.gramos_alimento;
                 } else {
                     total = total + (consumicion.receta.kcalorias/100) * consumicion.gramos_receta;
                 }

@@ -14,7 +14,7 @@ export class ConsumicionDia {
     /**
      * Gramos del alimento de la ConsumicionDia
      */
-    gramos_aliento: number;
+    gramos_alimento: number;
 
     /**
      * Gramos de la receta de la consumiciondia
