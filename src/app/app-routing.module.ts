@@ -8,10 +8,6 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'folder/:id',
-    loadChildren: () => import('./folder/folder.module').then( m => m.FolderPageModule)
-  },
-  {
     path: 'home',
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
   },
@@ -30,10 +26,6 @@ const routes: Routes = [
   {
     path: 'alimentos',
     loadChildren: () => import('./alimentos/alimentos.module').then( m => m.AlimentosPageModule)
-  },
-  {
-    path: 'categoria-alimento',
-    loadChildren: () => import('./components/categoria-alimento/categoria-alimento.module').then( m => m.CategoriaAlimentoPageModule)
   },
   {
     path: 'nueva-receta',

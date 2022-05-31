@@ -13,6 +13,8 @@ export class AlimentoService {
    */
   url = 'http://localhost:8080/api/alimentos/'
 
+  urlRecetas = 'http://localhost:8080/api/recetas'
+
   /**
    * 
    * @param http Construcción que inicializa el servicio
@@ -26,4 +28,12 @@ export class AlimentoService {
   obtenerAlimentos(): Observable<any> {
     return this.http.get<any>(this.url)
   }
+
+  /**
+   * Función que nos permite consumir el servicio para consultar las recetas
+   */
+  obtenerRecetas(): Observable<any> {
+    return this.http.get<any>(this.urlRecetas)
+  }
+
 }
