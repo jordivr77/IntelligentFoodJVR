@@ -6,7 +6,7 @@ import { AgregarAlimentoService } from '../servicios/agregar-alimento.service';
 import { ConsumicionDiaService } from '../servicios/consumicion-dia.service';
 import { ConsumicionDia } from '../modelos/consumicionDia.interface';
 import { DiaService } from '../servicios/dia.service';
-import { Usuario } from '../modelos/usuario.interface';
+import { element } from 'protractor';
 
 @Component({
   selector: 'app-agregar-alimento',
@@ -27,7 +27,8 @@ export class AgregarAlimentoPage implements OnInit {
 
   idCategoria: any;
 
-  idAlimento: any;
+  gramosAlimentos: {alimento:Alimento,gramos:number}[] = [];
+
 
   /**
    * En constructor se llama al servicio de agregar-alimento
@@ -59,13 +60,31 @@ export class AgregarAlimentoPage implements OnInit {
   consumirAlimento(alimento: Alimento, gramos_aliento: number){
     let consumiciondia = new ConsumicionDia();
     consumiciondia.alimento = alimento;
-    consumiciondia.gramos_aliento = gramos_aliento;
+    consumiciondia.gramos_alimento = 100;
+    if (this.gramosAlimentos) {
+      let index = this.gramosAlimentos.findIndex((element) => element.alimento.id == alimento.id);
+      if (index != -1) {
+        let gramosAlimento = this.gramosAlimentos[index];
+        consumiciondia.gramos_alimento = gramosAlimento.gramos;
+      } 
+    } 
     this.diaService.obtenerHoy(1).subscribe(data => {
       consumiciondia.dia = data;
-      this.consumicionDiaService.crearConsumicionDia(consumiciondia).subscribe();
+      this.consumicionDiaService.crearConsumicionDia(consumiciondia).toPromise();
     });
   }
 
-
+  actualizarGramosAlimento(event: Event,alimento: Alimento): void {
+    let index = this.gramosAlimentos.findIndex((element) => element.alimento.id == alimento.id);
+    let gramos: number = Number((event.target as HTMLInputElement).value);
+    console.log(gramos);
+    if (index != -1) {
+      let gramosAlimento = this.gramosAlimentos[index];
+      gramosAlimento.gramos = gramos;
+    } else {
+      
+      this.gramosAlimentos.push({alimento,gramos});
+    }
+  }
 
 }
