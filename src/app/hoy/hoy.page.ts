@@ -46,4 +46,5 @@ export class HoyPage implements OnInit {
       }
     });
   }
+  
 }

@@ -3,7 +3,7 @@ import { Alimento } from '../modelos/alimento.interface';
 import { Categoria } from '../modelos/categoria.interface';
 import { AlimentoService } from '../servicios/alimento.service';
 import { CategoriaService } from '../servicios/categoria.service';
-import { TusRecetasService } from '../servicios/tus-recetas.service';
+
 
 @Component({
   selector: 'app-alimentos',
@@ -31,8 +31,7 @@ export class AlimentosPage implements OnInit {
    * @param categoriaService 
    */
   constructor(public alimentoService: AlimentoService, 
-    public categoriaService: CategoriaService,
-    public tusRecetasService: TusRecetasService) { }
+    public categoriaService: CategoriaService) { }
 
   /**
    * Codificamos la carga de los datos

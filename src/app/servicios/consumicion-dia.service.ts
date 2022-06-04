@@ -11,6 +11,7 @@ export class ConsumicionDiaService {
 
   urlConsumicionDia = 'http://localhost:8080//api/consumiciondias';
   urlConsumicionesHoy = 'http://localhost:8080//api/consumiciondia/hoy/';
+  urlBorrar = '/api/consumiciondias/';
 
   constructor(public http: HttpClient) { }
 
