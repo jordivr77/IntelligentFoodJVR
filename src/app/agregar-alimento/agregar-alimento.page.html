@@ -33,11 +33,11 @@
             </ion-label>
           </div>
           <div class="input-group mb-3">
-            <input  (focusout)="actualizarGramosAlimento($event, alimento)" type="number" class="form-control" placeholder="Tus gramos" aria-label="Tus gramos" step="100" min="100">
+            <input  (focusout)="actualizarGramosAlimento($event, alimento)" type="number" class="form-control" placeholder="Tus gramos" aria-label="Tus gramos" step="100" min="1">
             <span class="input-group-text">Grs.</span>
           </div>
           <div>
-            <button (click)="consumirAlimento(alimento, 100)" class="card-link">Comer</button>
+            <button [routerLink]="['/hoy']"(click)="consumirAlimento(alimento, 100)" class="card-link">Comer</button>
           </div>
           <div>
             <a href="#" class="card-link">Comer y seguir</a>

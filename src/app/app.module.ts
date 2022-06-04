@@ -21,6 +21,9 @@ import { AlimentoService } from './servicios/alimento.service';
 import { CategoriaService } from './servicios/categoria.service';
 import { AgregarAlimentoService } from './servicios/agregar-alimento.service';
 import { DiaService } from './servicios/dia.service';
+import { TusRecetasService } from './servicios/tus-recetas.service';
+import { ConsumicionDiaService } from './servicios/consumicion-dia.service';
+import { NuevaRecetaPageModule } from './tus-recetas/nueva-receta/nueva-receta.module';
 
 
 @NgModule({
@@ -35,7 +38,8 @@ import { DiaService } from './servicios/dia.service';
     AgregarAlimentoPageModule,
     HomePageModule,
     HoyPageModule,
-    TusRecetasPageModule
+    TusRecetasPageModule,
+    NuevaRecetaPageModule
 
   ], 
   providers: [
@@ -43,7 +47,9 @@ import { DiaService } from './servicios/dia.service';
     AlimentoService,
     CategoriaService,
     AgregarAlimentoService,
-    DiaService
+    DiaService,
+    TusRecetasService,
+    ConsumicionDiaService
   ],
   bootstrap: [AppComponent],
 })
