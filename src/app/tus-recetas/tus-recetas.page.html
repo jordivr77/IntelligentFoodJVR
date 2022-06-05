@@ -17,21 +17,28 @@
       <div class="card h-100">
         <!-- Para que acceda al directorio imágenes -->
         <div class="card-body">
-          <p class="card-text"> {{ receta.nombre }} </p>
+          <p class="card-text info nombreReceta"> {{ receta.nombre }} </p>
         </div>
         <div class="card-footer">
           <div>
             <ion-label>
-              <strong>{{ receta.kcalorias }} <span>Kcal</span></strong>
+              <strong class="info">{{ receta.kcalorias }} <span>Kcal</span></strong>
             </ion-label>
+            <div class="collapse mb-2" id="collapseExample">
+              <div class="card card-body info">
+                {{receta.preparacion}}
+              </div>
+            </div>
           </div>
           <div class="input-group mb-3">
-            <input type="number" class="form-control" placeholder="Tus gramos" aria-label="Tus gramos" step="100" min="100">
-            
-            <!--<span class="input-group-text">Grs.</span>-->
+            <input (focusout)="actualizarGramosReceta($event, receta)" type="number" class="form-control" placeholder="Tus gramos" aria-label="Tus gramos" step="100" min="100">
+            <span class="input-group-text">Grs.</span>
           </div>
           <div>
-            <button class="card-link">Mira</button>
+            <button [routerLink]="['/hoy']" (click)="consumirReceta(receta)" class="card-link mb-2">Comer</button>
+          </div>
+          <div>
+            <button class="card-link" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">Expandir</button>
           </div>
         </div>
       </div>

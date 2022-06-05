@@ -1,3 +1,4 @@
+import { Alimento } from "./alimento.interface";
 import { Categoria } from "./categoria.interface";
 import { ConsumicionDia } from "./consumicionDia.interface";
 import { Usuario } from "./usuario.interface";
@@ -16,6 +17,8 @@ export class Receta {
      */
     nombre: string;
 
+    preparacion: string;
+
     /**
      * Kilocalorías de la receta
      */
@@ -24,7 +27,7 @@ export class Receta {
     /**
      * Usuario que tiene una receta
      */
-    usuario: Usuario[];
+    usuario: Usuario;
 
     /**
      * Categoría que tiene una receta
@@ -36,6 +39,11 @@ export class Receta {
      */
     consumiciones_dia: ConsumicionDia[];
 
-    constructor() {};
+    alimentos: Alimento[];
+
+    constructor() {
+        this.consumiciones_dia = [];
+        this.alimentos =[];
+    };
     
 }

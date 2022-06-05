@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start" class="menu_btn">
-      <ion-back-button color="ligth" defaultHref="search-ref"></ion-back-button>
+      <ion-back-button color="ligth" defaultHref=""></ion-back-button>
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title>Alimentos</ion-title>
@@ -37,7 +37,7 @@
             <span class="input-group-text">Grs.</span>
           </div>
           <div>
-            <button [routerLink]="['/hoy']"(click)="consumirAlimento(alimento, 100)" class="card-link">Comer</button>
+            <button [routerLink]="['/hoy']"(click)="consumirAlimento(alimento)" class="card-link">Comer</button>
           </div>
           <div>
             <a href="#" class="card-link">Comer y seguir</a>

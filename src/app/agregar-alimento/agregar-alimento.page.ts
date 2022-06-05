@@ -48,16 +48,13 @@ export class AgregarAlimentoPage implements OnInit {
 
     this.idCategoria = this.activatedRoute.snapshot.paramMap.get('id');
 
-    console.log(this.idCategoria);
-
     this.agregarAlimentoService.obtenerAlimentos(this.idCategoria)
-      .subscribe(data => {
-        console.log(data);
-        this.alimentos = data;
-      })
+    .subscribe(data => {
+      this.alimentos = data;
+    })
   }
 
-  consumirAlimento(alimento: Alimento, gramos_alimento: number) {
+  consumirAlimento(alimento: Alimento){
     let consumiciondia = new ConsumicionDia();
     consumiciondia.alimento = alimento;
     consumiciondia.gramos_alimento = 100;
@@ -77,7 +74,6 @@ export class AgregarAlimentoPage implements OnInit {
   actualizarGramosAlimento(event: Event, alimento: Alimento): void {
     let index = this.gramosAlimentos.findIndex((element) => element.alimento.id == alimento.id);
     let gramos: number = Number((event.target as HTMLInputElement).value);
-    console.log(gramos);
     if (index != -1) {
       let gramosAlimento = this.gramosAlimentos[index];
       gramosAlimento.gramos = gramos;

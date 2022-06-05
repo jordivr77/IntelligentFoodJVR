@@ -10,32 +10,59 @@
 
 <ion-content>
 	<div class="container">
-
-		<header class="jumbotron my-4">
-			<h1 class="display-3">Nueva Receta</h1>
-		</header>
-		<form th:action="@{/usuario/save}" method="post">
+	  <header class="jumbotron my-4">
+      <h1 class="display-3">Nueva Receta</h1>
+    </header>
+		<form>
 			<div class="form-group">
-				<label for="nombres">Nombre:</label> <input type="text" class="form-control" id="nombre" name="nombre"
-					required placeholder="Introduzca su nombre" autocomplete="off">
+				<label for="nombre">Nombre de la receta:</label> 
+				<input type="text" class="form-control" id="nombre" name="nombre"
+					required placeholder="Introduzca el nombre de la receta" autocomplete="off">
 			</div>
 
 			<div class="form-group">
-				<label for="email">Email:</label> <input type="email" class="form-control" id="email" name="email"
-					required placeholder="Introduzca su email" autocomplete="off">
+				<label for="preparacion">Preparacion:</label>
+				<textarea class="form-control" aria-label="Preparacion" id="preparacion" 
+					placeholder="Pasos para preparar la receta"></textarea>
 			</div>
 
 			<div class="form-group">
-				<label for="direccion">Dirección:</label> <input type="text" class="form-control" id="direccion"
-					name="direccion" required placeholder="Introduzca su dirección" autocomplete="off">
+				<label for="ingredientes">Ingredientes:</label> 
+				<div class="input-group mb-3">
+					<input type="text" class="form-control" id="alimentoBuscar" placeholder="Busque un alimento" aria-label="ingredientes" aria-describedby="button-addon2">
+					<div class="input-group-append">
+					  <button (click)="buscarAlimento()" class="btn btn-outline-secondary" type="button" id="button-addon2">Buscar</button>
+					</div>
+				</div>
+					<select multiple class="form-control">
+						<option *ngFor="let alimento of alimentosFiltrados" (click)="nuevoIngrediente(alimento)" value="{{alimento.id}}">{{alimento.nombre}}</option>
+				  	</select>
+				<ul class="list-group mt-2">
+					<li *ngFor="let alimento of receta.alimentos" class="list-group-item d-flex justify-content-between align-items-center">
+						{{alimento.nombre}}
+						<button (click)="borrarIngrediente(alimento)" class="badge btn btn-danger">
+							<ion-icon name="trash-outline"></ion-icon>
+						</button>
+					</li>
+				</ul>
 			</div>
 
 			<div class="form-group">
-				<label for="pwd">Contraseña</label> <input type="password" class="form-control" id="password"
-					name="password" required placeholder="Introduzca su contraseña" autocomplete="off">
+				<label for="categoria">Categoria:</label> 
+				<select class="custom-select" id="categoria">
+					<option selected></option>
+					<option *ngFor="let categoria of categorias" value="{{categoria.id}}">{{categoria.nombre}}</option>
+				</select>
 			</div>
-			<div class="col-sm-2">
-				<button type="submit" class="btn btn-success">Guardar</button>
+
+			<div class="form-group">
+				<label for="calorias">Calorias:</label> 
+				<input type="number" class="form-control" id="calorias"
+					name="calorias" required placeholder="Ajuste las calorias del plato" autocomplete="off" value="{{receta.kcalorias}}">
+			</div>
+			<div class="col-sm-2 mb-4">
+				<button (click)="guardarReceta()" type="submit" class="btn btn-success">Guardar</button>
+				<div id="faltanDatos"></div>
 			</div>
 		</form>
 
