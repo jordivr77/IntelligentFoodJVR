@@ -22,7 +22,6 @@ export class AgregarAlimentoService {
    */
 
   obtenerAlimentos(idCategoria: number) : Observable<any> {
-    console.log(this.url);
     return this.http.get<any>(this.url + idCategoria);
   }
 }

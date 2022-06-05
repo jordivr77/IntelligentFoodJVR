@@ -45,13 +45,11 @@ export class AlimentosPage implements OnInit {
     
     this.categoriaService.obtenerCategorias()
     .subscribe(data => {
-      console.log(data);
       this.categorias = data;
     })
 
     this.alimentoService.obtenerAlimentos()
     .subscribe(data => {
-      console.log(data);
       this.alimentos = data;
     })
   }

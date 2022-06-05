@@ -26,7 +26,6 @@ export class HoyPage implements OnInit {
       if (this.hoy) {
         this.consumicionDiaService.obtenerConsumicionesHoy(this.hoy).subscribe(data => {
           this.consumicionesHoy = data;
-          console.log(data);
           if (this.consumicionesHoy) {
             this.consumicionesHoy.forEach(consumicion => {
               if (consumicion.alimento) {
