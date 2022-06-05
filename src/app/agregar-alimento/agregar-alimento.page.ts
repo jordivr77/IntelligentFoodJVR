@@ -27,18 +27,18 @@ export class AgregarAlimentoPage implements OnInit {
 
   idCategoria: any;
 
-  gramosAlimentos: {alimento:Alimento,gramos:number}[] = [];
+  gramosAlimentos: { alimento: Alimento, gramos: number }[] = [];
 
 
   /**
    * En constructor se llama al servicio de agregar-alimento
    */
   constructor(
-    public agregarAlimentoService: AgregarAlimentoService, 
+    public agregarAlimentoService: AgregarAlimentoService,
     public consumicionDiaService: ConsumicionDiaService,
     public diaService: DiaService,
     private activatedRoute: ActivatedRoute
-    ) { }
+  ) { }
 
   /**
    * Codificamos la carga de los datos
@@ -63,23 +63,23 @@ export class AgregarAlimentoPage implements OnInit {
       if (index != -1) {
         let gramosAlimento = this.gramosAlimentos[index];
         consumiciondia.gramos_alimento = gramosAlimento.gramos;
-      } 
-    } 
+      }
+    }
     this.diaService.obtenerHoy(1).subscribe(data => {
       consumiciondia.dia = data;
       this.consumicionDiaService.crearConsumicionDia(consumiciondia).toPromise();
     });
   }
 
-  actualizarGramosAlimento(event: Event,alimento: Alimento): void {
+  actualizarGramosAlimento(event: Event, alimento: Alimento): void {
     let index = this.gramosAlimentos.findIndex((element) => element.alimento.id == alimento.id);
     let gramos: number = Number((event.target as HTMLInputElement).value);
     if (index != -1) {
       let gramosAlimento = this.gramosAlimentos[index];
       gramosAlimento.gramos = gramos;
     } else {
-      
-      this.gramosAlimentos.push({alimento,gramos});
+
+      this.gramosAlimentos.push({ alimento, gramos });
     }
   }
 
